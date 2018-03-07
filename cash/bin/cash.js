@@ -7,6 +7,7 @@ const currencies = require('../lib/currencies.json');
 
 const API = 'https://api.fixer.io/latest';
 
+//print the the result
 const convert = configuration => {
   const {amount, to, from, response, loading} = configuration;
 
@@ -34,6 +35,7 @@ const convert = configuration => {
   process.exit(1);
 };
 
+//the function take the argument split into amount/from/to
 const cash = async command => {
   const amount = command.amount;
   const from = command.from.toUpperCase();
@@ -56,6 +58,7 @@ const cash = async command => {
   try {
     const response = await got(API, {'json': true});
 
+    //call the function convert
     convert({amount, to, from, response, loading});
   } catch (err) {
     if (err.code === 'ENOTFOUND') {
@@ -67,5 +70,6 @@ const cash = async command => {
     process.exit(1);
   }
 };
+
 
 module.exports = cash;

@@ -1,16 +1,45 @@
 # cash
-Introduction:
-  cash is a library who convert a amount of currency in a other currency
 
-Linux Installation:
-  install npm with "$sudo apt-get install npm" , if not Install
-  install learnyounode with "$sudo apt-get install learnyounode" , if not install
-  go in your folder cash\
-  use the command "$sudo npm install"
+1. Introduction
+2. Linux Installation
+3. use
+
+### Introduction:
+cash is a library who convert a amount of currency in a other currency
+
+### Linux Installation:
+
+  install npm with
+  ```sh
+  $sudo apt-get install npm
+  ```  
+  install learnyounode with
+
+  ```sh
+  $sudo apt-get install learnyounode
+  ```
+  go in your folder "cash\" use the command
+  ```sh
+  $sudo npm install
+  ```
   to install all the dependencies of the library cash
 
-Use:
-  you can run "$node index.js" to have the usage and command
-  to use the library you use the command "$node index.js <amount> <currency>"
+### Use:
+  to have the usage and command,you can run :
+  ```sh
+  $node index.js
+  ```
+  to use the library you use the command
+  ```sh
+  $node index.js amount currencyComeFrom currencyToConvert currencyToConvert2 currencyToConvert3
+  ```
   for exemple :
-    "$node index.js 20 eur"
+  convert 20 euro into 20 dollars ,20 pounds ,20 polish zloty
+  ```sh
+  $node index.js 20 eur usd gbp pln
+  ```
+you can just use :
+```sh
+$node index.js amount
+```
+and by default take the amount in usd and convert in eur,gbp and pln

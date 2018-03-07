@@ -10,6 +10,7 @@ const argv = process.argv.slice(2);
 
 helpers(argv);
 
+//take the argument after "index.js" and splite it
 const command = {
   'amount': argv[0] || 1,
   'from': argv[1] || config.get('defaultFrom', 'USD'),
@@ -19,4 +20,5 @@ const command = {
       : config.get('defaultTo', ['USD', 'EUR', 'GBP', 'PLN'])
 };
 
+//call the function cash with the arguments split by command
 cash(command);
