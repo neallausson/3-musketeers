@@ -56,7 +56,7 @@ test('should convert a NaN to a String', () => {
 });
 
 test('should not convert a NaN to a Big', () => {
-  expect(expect(typeof convert(NaN, 'BTC', 'BTC', 'Big')).not.toBe(typeof new Big(2))).toThrow();
+  expect(typeof convert(NaN, 'BTC', 'BTC', 'Big')).toThrow();
   //throw new Error('test not yet defined... write your test here');
 });
 
@@ -81,7 +81,7 @@ test('should throw when representaion is undefined', () => {
 });
 
 test('should allow untest aliases', () => {
-  //convert(4.6, 'Satoshi', 'sat');
-  //convert(4.6, 'μBTC', 'btest');
-  throw new Error('test not yet defined... write your test here');
+  expect( () => {convert(4.6, 'Satoshi', 'sat')}).not.toThrow();
+  expect( () => {convert(4.6, 'μBTC', 'btest')}).toThrow();
+  //throw new Error('test not yet defined... write your test here');
 });
